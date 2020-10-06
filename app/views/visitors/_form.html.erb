@@ -1,0 +1,85 @@
+<div id="container">
+  <div id="row">
+    <div class="col-sm-12 col-md-12 col-xs-12 ">
+      <div class="card" style=" width: 600px ;max-width: 100%; border: 2px solid #eeeeee;background: #eeeeee; padding:40px; margin:0 auto; color: steelblue;">
+      <div class="logo"><img src="<%= asset_path 'logo-min.png' %>" style="height: 80px;"><h4 class="mb-12">Control de visitantes</h4></div>
+        <%= form_with(model: visitor, local: true) do |form| %>
+            <% if visitor.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(visitor.errors.count, "error") %> No puede dejar campos vacios:</h2>
+
+                <ul>
+                  <% visitor.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="field ">
+              <%= form.label "Fecha" %>
+              <%= form.date_select :date,class: "custom-select" %>
+            </div>
+
+            <div class="field">
+              <%= form.label "Hora de llegada" %>
+              <%= form.time_select :arrival %>
+            </div>
+
+            <div class="field">
+              <%= form.label "Nombre" %>
+              <%= form.text_field :name, class:"form-control input-sm"%>
+            </div>
+
+            <div class="field">
+              <%= form.label "Compania" %>
+              <%= form.text_field :company,class:"form-control input-sm"%>
+            </div>
+
+            <div class="field">
+              <%= form.label :eps %>
+              <%= form.text_field :eps,class:"form-control input-sm" %>
+            </div>
+
+            <div class="field">
+              <%= form.label :arl %>
+              <%= form.text_field :arl,class:"form-control input-sm" %>
+            </div>
+
+            <div class="field">
+              <%= form.label :rh %>
+              <%= form.text_field :rh,class:"form-control input-sm"%>
+            </div>
+
+            <div class="field">
+              <%= form.label "Alergias" %>
+              <%= form.text_field :alergy,class:"form-control input-sm" %>
+            </div>
+
+            <div class="field">
+              <%= form.label "NUMERO EN CASO DE EMERGENCIA" %>
+              <%= form.text_field :phone,class:"form-control input-sm" %>
+            </div>
+
+             <div class="form-check form-check-inline">
+              <%= form.check_box :injury,class:"form-check-input" %>
+              <label class="form-check-label" for="visitor_injury">Sufrio lesion en la visita?</label>
+          </div>
+      
+
+            <div class="field">
+              <%= form.label "Hora de salida" %>
+              <%= form.time_select :output %>
+            </div>
+
+            <div class="actions " style="text-align: center;">
+              <%= form.submit 'Guardar', :class => 'btn btn-success' %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

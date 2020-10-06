@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @visitor.date %>
+</p>
+
+<p>
+  <strong>Hora de llegada:</strong>
+  <%= @visitor.arrival %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @visitor.name %>
+</p>
+
+<p>
+  <strong>Compania:</strong>
+  <%= @visitor.company %>
+</p>
+
+<p>
+  <strong>Eps:</strong>
+  <%= @visitor.eps %>
+</p>
+
+<p>
+  <strong>Arl:</strong>
+  <%= @visitor.arl %>
+</p>
+
+<p>
+  <strong>Rh:</strong>
+  <%= @visitor.rh %>
+</p>
+
+<p>
+  <strong>Alergias:</strong>
+  <%= @visitor.alergy %>
+</p>
+
+<p>
+  <strong>Numero en caso de emergencia:</strong>
+  <%= @visitor.phone %>
+</p>
+
+<p>
+  <strong>Sufrio lesion en la visita?:</strong>
+  <%= @visitor.injury %>
+</p>
+
+<p>
+  <strong>Hora de salida:</strong>
+  <%= @visitor.output %>
+</p>
+
+<%= link_to 'Editar', edit_visitor_path(@visitor) %> |
+<%= link_to 'Atras', visitors_path %>

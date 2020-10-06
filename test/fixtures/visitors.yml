@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-10-06
+  arrival: 2020-10-06 16:59:23
+  name: MyString
+  company: MyString
+  eps: MyString
+  arl: MyString
+  rh: MyString
+  alergy: MyString
+  phone: MyString
+  injury: false
+  output: 2020-10-06 16:59:23
+
+two:
+  date: 2020-10-06
+  arrival: 2020-10-06 16:59:23
+  name: MyString
+  company: MyString
+  eps: MyString
+  arl: MyString
+  rh: MyString
+  alergy: MyString
+  phone: MyString
+  injury: false
+  output: 2020-10-06 16:59:23

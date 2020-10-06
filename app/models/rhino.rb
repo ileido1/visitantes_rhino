@@ -1,0 +1,2 @@
+class Rhino < ApplicationRecord
+end
