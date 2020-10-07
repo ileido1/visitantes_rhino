@@ -1,7 +1,7 @@
 <div id="container">
   <div id="row">
     <div class="col-sm-12 col-md-12 col-xs-12 ">
-      <div class="card" style=" width: 600px ;max-width: 100%; border: 2px solid #eeeeee;background: #eeeeee; padding:40px; margin:0 auto; color: steelblue;">
+      <div class="card" style=" width: 600px;max-width: 100%;border: 2px solid #eeeeee;background: #eeeeee;padding: 20px;margin:0 auto;color: steelblue;border-radius: 20px;">
       <div class="logo"><img src="<%= asset_path 'logo-min.png' %>" style="height: 80px;"><h4 class="mb-12">Control de visitantes</h4></div>
         <%= form_with(model: visitor, local: true) do |form| %>
             <% if visitor.errors.any? %>
@@ -17,12 +17,12 @@
             <% end %>
             <div class="field ">
               <%= form.label "Fecha" %>
-              <%= form.date_select :date,class: "custom-select" %>
+              <%= form.date_field :date,class: "form-control" %>
             </div>
 
             <div class="field">
               <%= form.label "Hora de llegada" %>
-              <%= form.time_select :arrival %>
+              <%= form.time_field :arrival,class: "form-control"  %>
             </div>
 
             <div class="field">
@@ -31,7 +31,7 @@
             </div>
 
             <div class="field">
-              <%= form.label "Compania" %>
+              <%= form.label "Compañía" %>
               <%= form.text_field :company,class:"form-control input-sm"%>
             </div>
 
@@ -56,23 +56,22 @@
             </div>
 
             <div class="field">
-              <%= form.label "NUMERO EN CASO DE EMERGENCIA" %>
+              <%= form.label "Número EN CASO DE EMERGENCIA" %>
               <%= form.text_field :phone,class:"form-control input-sm" %>
             </div>
 
              <div class="form-check form-check-inline">
               <%= form.check_box :injury,class:"form-check-input" %>
-              <label class="form-check-label" for="visitor_injury">Sufrio lesion en la visita?</label>
+              <label class="form-check-label" for="visitor_injury">¿Sufrió lesión en la visita?</label>
           </div>
-      
 
             <div class="field">
               <%= form.label "Hora de salida" %>
-              <%= form.time_select :output %>
+              <%= form.time_field :output,class: "form-control" %>
             </div>
 
             <div class="actions " style="padding: 20px;text-align: center;">
-              <%= form.submit 'Guardar', :class => 'btn btn-success' %>
+              <%= form.submit 'Guardar', :class => 'btn btn-primary btn-lg btn-block' %>
             </div>
           <% end %>
       </div>

@@ -1,21 +1,26 @@
 
-<div class="container">
+<div class="container" style=" 
+    /* background: gray; */
+    background: #eeeeee;
+    color: steelblue;
+    padding: 20px;"
+>
 <p id="notice"><%= notice %></p>
-<h1 style="text-align:center;">Control de visitantes</h1>
+<div class="logo"><img src="<%= asset_path 'logo-min.png' %>" style="height: 80px;"><h4 class="mb-12">Control de visitantes</h4></div>
 <div class="table-responsive">
-<table class="table table-dark">
+<table class="table">
   <thead>
     <tr>
       <th>Dia</th>
       <th>Hora de llegada</th>
       <th>Nombre</th>
-      <th>Compania</th>
+      <th>Compañía</th>
       <th>Eps</th>
       <th>Arl</th>
       <th>Rh</th>
       <th>Alergias</th>
-      <th>Numero en caso de emergencia </th>
-      <th>Alergias</th>
+      <th>Número en caso de emergencia </th>
+      <th>¿Sufrió lesión en la visita?</th>
       <th>Hora de salida</th>
       <th colspan="3"></th>
     </tr>

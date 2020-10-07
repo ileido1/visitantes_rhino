@@ -28,7 +28,7 @@ class VisitorsController < ApplicationController
 
     respond_to do |format|
       if @visitor.save
-        format.html { redirect_to @visitor, notice: 'Se guardo correctamente.' }
+        format.html { redirect_to @visitor, notice: 'Se guardó correctamente' }
         format.json { render :show, status: :created, location: @visitor }
       else
         format.html { render :new }
