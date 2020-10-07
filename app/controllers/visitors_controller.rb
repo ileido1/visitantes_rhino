@@ -4,7 +4,8 @@ class VisitorsController < ApplicationController
   # GET /visitors
   # GET /visitors.json
   def index
-    @visitors = Visitor.all
+    @visitors = Visitor.paginate(page: params[:page], per_page: 10).all
+  
   end
 
   # GET /visitors/1
@@ -28,7 +29,7 @@ class VisitorsController < ApplicationController
 
     respond_to do |format|
       if @visitor.save
-        format.html { redirect_to @visitor, notice: 'Se guardó correctamente' }
+        format.html { redirect_to @visitor, notice: 'Ha completado con éxito todas las preguntas. Gracias por usar el sistema de control de visitantes de Merak Engineers' }
         format.json { render :show, status: :created, location: @visitor }
       else
         format.html { render :new }

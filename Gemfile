@@ -6,9 +6,11 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use sqlite3 as the database for Active Record
-
 # Use Puma as the app server
+gem 'will_paginate', '~> 3.1.0'
 gem 'puma', '~> 4.1'
+gem "chartkick"
+gem 'groupdate'
 #devise 
 gem 'devise'
 # Use SCSS for stylesheets

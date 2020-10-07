@@ -30,4 +30,39 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  will_paginate:
+    previous_label: <span class="glyph glyph-prev"></span>
+    next_label: <span class="glyph glyph-next"></span>
+  activerecord:
+    attributes:
+      visitor:
+        date: "Fecha"
+        arrival: "Hora de llegada"
+        name: "Nombre"
+        company: "Compañía"
+        alergy: "Alergias"
+        injury: "¿Sufrió lesión en la visita?"
+        output: "Hora de salida"
+    errors:
+      models:
+        visitor:
+          attributes:
+            date:
+              blank: "No puede estar vacio"
+            arrival:
+              blank: "No puede estar vacio"
+            name:
+              blank: "No puede estar vacio"
+            company:
+              blank: "No puede estar vacio"
+            alergy:
+              blank: "No puede estar vacio"
+            output:
+              blank: "No puede estar vacio"
+            eps:
+              blank: "No puede estar vacio"
+            arl:
+              blank: "No puede estar vacio"
+            rh:
+              blank: "No puede estar vacio"
+ 

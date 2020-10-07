@@ -11,7 +11,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Dia</th>
+      <th>Fecha</th>
       <th>Hora de llegada</th>
       <th>Nombre</th>
       <th>Compañía</th>
@@ -47,9 +47,19 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @visitors %>
 <br>
-
 <%= link_to 'Nuevo visitante', new_visitor_path %>
+<div class="logo"><h4 class="mb-12">Estadisticas</h4></div>
+
+<p class="testadisticas">Cantidad de personas inscritas por día</p>
+<%= line_chart Visitor.group_by_day(:created_at).count %>
+<p class="testadisticas">Cantidad de personas inscritas por hora</p>
+<%= line_chart Visitor.group_by_hour(:arrival).count %>
+<p class="testadisticas">Cantidad de personas con alergias positivas</p>
+<%= pie_chart Visitor.group(:alergy).count %>
+<p class="testadisticas">Cantidad de personas lesionadas</p>
+<%= pie_chart Visitor.group(:injury).count %>
+
 </div>
 </div>

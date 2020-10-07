@@ -5,59 +5,56 @@
       <div class="logo"><img src="<%= asset_path 'logo-min.png' %>" style="height: 80px;"><h4 class="mb-12">Control de visitantes</h4></div>
         <%= form_with(model: visitor, local: true) do |form| %>
             <% if visitor.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(visitor.errors.count, "error") %> No puede dejar campos vacios:</h2>
-
-                <ul>
-                  <% visitor.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
-              </div>
+            <div class="alert alert-danger">
+              <% visitor.errors.full_messages.each do |message| %>
+                
+                    <%= message %>,
+                    <% end %>
+                </div>
             <% end %>
             <div class="field ">
               <%= form.label "Fecha" %>
-              <%= form.date_field :date,class: "form-control" %>
+              <%= form.date_field :date,class: "form-control form-control-sm" %>
             </div>
 
             <div class="field">
               <%= form.label "Hora de llegada" %>
-              <%= form.time_field :arrival,class: "form-control"  %>
+              <%= form.time_field :arrival,class: "form-control form-control-sm"  %>
             </div>
 
             <div class="field">
               <%= form.label "Nombre" %>
-              <%= form.text_field :name, class:"form-control input-sm"%>
+              <%= form.text_field :name, class:"form-control form-control-sm"%>
             </div>
 
             <div class="field">
               <%= form.label "Compañía" %>
-              <%= form.text_field :company,class:"form-control input-sm"%>
+              <%= form.text_field :company,class:"form-control form-control-sm"%>
             </div>
 
             <div class="field">
-              <%= form.label :eps %>
-              <%= form.text_field :eps,class:"form-control input-sm" %>
+              <%= form.label "eps" %>
+              <%= form.text_field :eps,class:"form-control form-control-sm" %>
             </div>
 
             <div class="field">
-              <%= form.label :arl %>
-              <%= form.text_field :arl,class:"form-control input-sm" %>
+              <%= form.label "arl" %>
+              <%= form.text_field :arl,class:"form-control form-control-sm" %>
             </div>
 
             <div class="field">
-              <%= form.label :rh %>
-              <%= form.text_field :rh,class:"form-control input-sm"%>
+              <%= form.label "rh" %>
+              <%= form.text_field :rh,class:"form-control form-control-sm"%>
             </div>
 
             <div class="field">
               <%= form.label "Alergias" %>
-              <%= form.text_field :alergy,class:"form-control input-sm" %>
+              <%= form.text_field :alergy,class:"form-control form-control-sm" %>
             </div>
 
             <div class="field">
               <%= form.label "Número EN CASO DE EMERGENCIA" %>
-              <%= form.text_field :phone,class:"form-control input-sm" %>
+              <%= form.text_field :phone,class:"form-control form-control-sm" %>
             </div>
 
              <div class="form-check form-check-inline">
@@ -73,12 +70,10 @@
             <div class="actions " style="padding: 20px;text-align: center;">
               <%= form.submit 'Guardar', :class => 'btn btn-primary btn-lg btn-block' %>
             </div>
-          <% end %>
-      </div>
+      <% end %>
+    </div>
     </div>
   </div>
  </div> 
-
-
-
-
+  </div> 
+  
