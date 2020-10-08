@@ -9,7 +9,7 @@
 
 <p>
   <strong class="stellblue">Hora de llegada:</strong>
-  <%= @visitor.arrival %>
+  <%= @visitor.arrival.strftime("%I:%M %p") %>
 </p>
 
 <p>
@@ -54,7 +54,7 @@
 
 <p>
   <strong class="stellblue">Hora de salida:</strong>
-  <%= @visitor.output %>
+  <%= @visitor.output.strftime("%I:%M %p") %>
 </p>
 
 </div>
