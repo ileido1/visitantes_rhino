@@ -8,5 +8,5 @@ class Visitor < ApplicationRecord
     validates :rh, presence: true
     validates :alergy, presence: true
     validates :output, presence: true
-    self.skip_time_zone_conversion_for_attributes = [:some_time_without_zone, :some_time_only]
+    
 end
