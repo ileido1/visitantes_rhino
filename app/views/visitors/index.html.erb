@@ -5,61 +5,76 @@
     color: steelblue;
     padding: 20px;"
 >
-<p id="notice"><%= notice %></p>
-<div class="logo"><img src="<%= asset_path 'logo-min.png' %>" style="height: 80px;"><h4 class="mb-12">Control de visitantes</h4></div>
-<div class="table-responsive">
-<table class="table">
-  <thead>
-    <tr>
-      <th>Fecha</th>
-      <th>Hora de llegada</th>
-      <th>Nombre</th>
-      <th>Compañía</th>
-      <th>Eps</th>
-      <th>Arl</th>
-      <th>Rh</th>
-      <th>Alergias</th>
-      <th>Número en caso de emergencia </th>
-      <th>¿Sufrió lesión en la visita?</th>
-      <th>Hora de salida</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <p id="notice"><%= notice %></p>
+    <div class="logo"><img src="<%= asset_path 'logo-min.png' %>" style="height: 80px;"><h4 class="mb-12">Control de visitantes</h4></div>
+      <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Hora de llegada</th>
+                  <th>Nombre</th>
+                  <th>Compañía</th>
+                  <th>Eps</th>
+                  <th>Arl</th>
+                  <th>Rh</th>
+                  <th>Alergias</th>
+                  <th>Número en caso de emergencia </th>
+                  <th>¿Sufrió lesión en la visita?</th>
+                  <th>Hora de salida</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
 
-  <tbody>
-    <% @visitors.each do |visitor| %>
-      <tr>
-        <td><%= visitor.date %></td>
-        <td><%= visitor.arrival %></td>
-        <td><%= visitor.name %></td>
-        <td><%= visitor.company %></td>
-        <td><%= visitor.eps %></td>
-        <td><%= visitor.arl %></td>
-        <td><%= visitor.rh %></td>
-        <td><%= visitor.alergy %></td>
-        <td><%= visitor.phone %></td>
-        <td><%= visitor.injury %></td>
-        <td><%= visitor.output %></td>
-        <td><%= link_to 'Mostrar', visitor %></td>
-        <td><%= link_to 'Editar', edit_visitor_path(visitor) %></td>
-        <td><%= link_to 'Eliminar', visitor, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= will_paginate @visitors %>
-<br>
+              <tbody>
+                <% @visitors.each do |visitor| %>
+                  <tr>
+                    <td><%= visitor.date %></td>
+                    <td><%= visitor.arrival %></td>
+                    <td><%= visitor.name %></td>
+                    <td><%= visitor.company %></td>
+                    <td><%= visitor.eps %></td>
+                    <td><%= visitor.arl %></td>
+                    <td><%= visitor.rh %></td>
+                    <td><%= visitor.alergy %></td>
+                    <td><%= visitor.phone %></td>
+                    <td><%= visitor.injury %></td>
+                    <td><%= visitor.output %></td>
+                    <td><%= link_to 'Mostrar', visitor %></td>
+                    <td><%= link_to 'Editar', edit_visitor_path(visitor) %></td>
+                    <td><%= link_to 'Eliminar', visitor, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+      <%= will_paginate @visitors %>
+      <br>
+    </div>
+
 <%= link_to 'Nuevo visitante', new_visitor_path %>
 <div class="logo"><h4 class="mb-12">Estadisticas</h4></div>
+  <div class="row" style="text-align:center;">
+    <div class=" col-sm-6 col-xs-12">
+        <p class="testadisticas">Cantidad de personas inscritas por día</p>
+        <%= line_chart Visitor.group_by_day(:date).count %>
+    </div>
+    <div class=" col-sm-6 col-xs-12">
+        <p class="testadisticas">Cantidad de personas inscritas por hora</p>
+        <%= line_chart Visitor.group_by_hour(:arrival).count %>
+    </div>
+  </div>
+<div class="row" style="text-align:center; padding-top:10px;">
+    <div class=" col-sm-6 col-xs-12">
+        <p class="testadisticas">Cantidad de personas con alergias positivas</p>
+        <%= pie_chart Visitor.group(:alergy).count %>
+    </div>
+    <div class=" col-sm-6 col-xs-12">
+          <p class="testadisticas">Cantidad de personas lesionadas</p>
+          <%= pie_chart Visitor.group(:injury).count %>
+    </div>
+  </div>
 
-<p class="testadisticas">Cantidad de personas inscritas por día</p>
-<%= line_chart Visitor.group_by_day(:date).count %>
-<p class="testadisticas">Cantidad de personas inscritas por hora</p>
-<%= line_chart Visitor.group_by_hour(:arrival).count %>
-<p class="testadisticas">Cantidad de personas con alergias positivas</p>
-<%= pie_chart Visitor.group(:alergy).count %>
-<p class="testadisticas">Cantidad de personas lesionadas</p>
-<%= pie_chart Visitor.group(:injury).count %>
 
-</div>
+
+
 </div>
