@@ -27,25 +27,9 @@ ActiveRecord::Schema.define(version: 2020_10_06_205922) do
     t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
   end
 
-  create_table "rhinos", force: :cascade do |t|
-    t.date "date"
-    t.time "arrival"
-    t.string "name"
-    t.string "company"
-    t.string "eps"
-    t.string "arl"
-    t.string "rh"
-    t.string "alergy"
-    t.string "phone"
-    t.boolean "injury"
-    t.time "output"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "visitors", force: :cascade do |t|
     t.date "date"
-    t.time "arrival"
+    t.datetime "arrival"
     t.string "name"
     t.string "company"
     t.string "eps"

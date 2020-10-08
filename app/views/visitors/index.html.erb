@@ -60,8 +60,7 @@
     </div>
     <div class=" col-sm-6 col-xs-12">
         <p class="testadisticas">Cantidad de personas inscritas por hora</p>
-        <%= line_chart Visitor.group_by_hour(:created_at).count %>
-        
+        <%= line_chart Visitor.group_by_hour(:arrival).count %> 
     </div>
   </div>
 <div class="row" style="text-align:center; padding-top:10px;">
