@@ -1,0 +1,21 @@
+{
+    "short_name": "Rhino CV",
+    "name": "Control de visitantes",
+    "icons": [
+      {
+        "src": "/icons/android-icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "/icons/apple-icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#3367D6"
+  }
