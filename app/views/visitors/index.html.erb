@@ -38,7 +38,7 @@
                     <td><%= visitor.rh %></td>
                     <td><%= visitor.alergy %></td>
                     <td><%= visitor.phone %></td>
-                    <td><%= visitor.injury %></td>
+                    <td><%= visitor.injury ? "Si" : "no" %></td>
                     <td><%= visitor.output.strftime("%I:%M %p") %></td>
                     <td><%= link_to 'Mostrar', visitor %></td>
                     <td><%= link_to 'Editar', edit_visitor_path(visitor) %></td>

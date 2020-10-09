@@ -15,7 +15,6 @@
 <p>
   <strong class="stellblue">Nombre:</strong>
   <%= @visitor.name %>
-  <%= @visitor.created_at %>
 </p>
 
 <p>
@@ -50,7 +49,7 @@
 
 <p>
   <strong class="stellblue">¿Sufrió lesión en la visita?:</strong>
-  <%= @visitor.injury %>
+  <%= @visitor.injury ? "Si" : "no" %>
 </p>
 
 <p>
