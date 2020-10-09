@@ -3,14 +3,10 @@
     "name": "Control de visitantes",
     "icons": [
       {
-        "src": "/icons/android-icon-144x144.png",
+        "src": "/icons/maskable_icon.png",
         "sizes": "144x144",
-        "type": "image/png"
-      },
-      {
-        "src": "/icons/apple-icon-144x144.png",
-        "sizes": "144x144",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any maskable"
       }
     ],
     "start_url": "/",
